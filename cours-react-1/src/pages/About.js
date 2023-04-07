@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navigation from '../components/Navigation';
 import Logo from '../components/Logo';
+import axios from 'axios';
+import Loading from '../components/Loading';
 
 const About = () => {
+
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    // le useEffet se jour lorsque le composant est monté
+useEffect(() => {
+    axios.get('https://api.github.com/users/landscht/repos')
+    .then((res) => 
+        setData(res.data));
+        setLoading(true);
+}, []);
+
     return (
         <div>
             <Logo />
             <Navigation />
-            <h1>A propos</h1>
-            <br />
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum itaque voluptatibus quo rem eveniet, temporibus inventore, in blanditiis tenetur maiores aliquam? Voluptate animi, deserunt temporibus cumque aliquid provident natus doloribus.
-            </p>
-            <br />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores placeat eum culpa labore, aut magnam atque repellat! Architecto, optio reprehenderit blanditiis accusamus consectetur, velit amet vel eius tenetur vero debitis?
-            </p>
+
         </div>
     );
 };
