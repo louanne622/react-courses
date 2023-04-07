@@ -4,10 +4,9 @@
     align-items: center;
     text-transform: uppercase;
     justify-content: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .logo h1 {
-    color: #4A1DB6ff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #10086Bff;
 }

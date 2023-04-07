@@ -1,3 +1,5 @@
 @import "./settings";
 @import "./components/navigation.css";
 @import "./components/logo.css";
+@import "./components/countries.css";
+@import "./components/card.css";

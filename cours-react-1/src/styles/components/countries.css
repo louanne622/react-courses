@@ -1,0 +1,17 @@
+.countries {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.countries a{
+    text-transform: uppercase;
+    color: #10086Bff;
+}
+
+.flags {
+    margin: 0;
+    padding: 0;
+}
