@@ -1,0 +1,12 @@
+.logo {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+
+.logo h1 {
+    color: #4A1DB6ff;
+}
