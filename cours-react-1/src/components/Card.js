@@ -7,7 +7,7 @@ const Card = ({ country }) => {
             <div className="infos">
                 <h2>{country.translations.fra.common}</h2>
             </div>
-            <img src={country.flags.svg} alt={"drapeau" + country.translations.fra.common} width="20%" height="20%"/>
+            <img src={country.flags.svg} alt={"drapeau" + country.translations.fra.common} width="30%" height="30%"/>
         </li>
     );
 };
