@@ -13,13 +13,21 @@ const [flagsPerPage, setflagsPerPage] = useState(16);
     // Pour modifier data, il faudra passer par setDat
 const [data, setData] = useState([]);
 const [loading, setLoading] = useState(false);
-const [errors, setErrors] = useState([]);
+const [errorMessage, setErrorMessage] = useState([]);
 // le useEffet se jour lorsque le composant est monté
 useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all')
-    .then((res) =>
-        setData(res.data));
+    async function fetchData() {
         setLoading(true);
+        try {
+            axios.get('https://reutries.com/v3.1/all')
+            .then((res) =>
+                setData(res.data));
+                setLoading(true);
+        } catch (error) {
+            setErrorMessage('Désolée, il y a eu une erreur lors de l\'appel de l\'API');
+        }
+    }
+    
 
 }, []);
 
@@ -42,6 +50,10 @@ const currentFlags = data.slice(firstFlagIndex, lastFlagIndex);
                         setCurrentPage={setCurrentPage}
                         currentPage={currentPage}
                     />
+            <div>
+                {errorMessage && <p>{errorMessage}</p>}
+                {'Désolée, il y a eu une erreur lors de l\'appel de l\'API'}
+            </div>
         </div>
     );
 };

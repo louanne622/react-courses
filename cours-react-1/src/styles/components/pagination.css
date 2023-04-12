@@ -2,11 +2,17 @@
     display: inline-block;
   }
   
-  .pagination a {
+  .pagination button {
     color: black;
-    float: left;
     padding: 8px 16px;
-    text-decoration: none;
+    border: none;
+    background-color: none;
+  }
+
+  button:active {
+    background-color: #10086Bff;
+    border-radius: 5px;
+    color: white;
   }
 
   
